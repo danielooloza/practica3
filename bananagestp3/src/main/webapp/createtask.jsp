@@ -55,12 +55,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="namecontent">Horas asignadas</td>
-                            <td class="contenttable">
-                                 <input type="number" id="hours" name="hours" min="0"/>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="namecontent">Usuario asignado</td>
                             <td class="contenttable">
                                 <select  class="selectionbuton" id="id_user" name="id_user" required="true">
