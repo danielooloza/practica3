@@ -41,30 +41,30 @@
 									<div>Nombre</div>
 								</td>
 								<td>
-									<div>Fecha de inicio</div>
-								</td>
-								<td>
 									<div>Descripción</div>
 								</td>
 								<td>
+									<div>Fecha de inicio</div>
+								</td>
+								<td>
+									<div>Fecha de fin</div>
+								</td>
+								<td>
+									<div>Notas</div>
+								</td>
+								<td>
 									<div>Estado</div>
-								</td>
-								<td>
-									<div>Horas</div>
-								</td>
-								<td>
-									<div></div>
 								</td>
 							</tr>
 							<c:forEach items="${taskList}" var="task">	
 							    <tr>
 							    	<td>${task.id}</td>
 							    	<td>${task.name}</td>
-									<td>${task.date_start}</td>
-									<td>${task.description}</td>
-									<td>${task.state}</td>
-									<td>${task.hours}</td>
-									<td><a href="createtask"> <button class = "edit"> Editar</button></a></td>
+							    	<td>${task.desc}</td>
+									<td>${task.dateBegin}</td>
+									<td>${task.dateEnd}</td>
+									<td>${task.notes}</td>
+									<td>${task.status}</td>
 							    </tr>
 							</c:forEach>
 						</table>
