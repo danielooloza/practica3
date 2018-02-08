@@ -89,7 +89,7 @@ public class TaskServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM project order by id asc");	
+			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM project ORDER id ASC");	
 			rs = stmt.executeQuery();
 			
 			while(rs.next()) {
@@ -118,16 +118,19 @@ public class TaskServlet extends HttpServlet {
 		 Task task = new Task();
 		 
 		 task.setName(request.getParameter("name"));
-	     task.setDescription(request.getParameter("description"));
-	     task.setDate_start(request.getParameter("date_start"));
-	     task.setState(request.getParameter("state"));
-	     task.setHours(Integer.parseInt(request.getParameter("hours")));
+		 task.setDesc(request.getParameter("desc"));
+	     task.setNotes(request.getParameter("notes"));
+	     task.setDateBegin(request.getParameter("dateBegin"));
+	     task.setDateEnd(request.getParameter("dateEnd"));
+	     task.setIdResponsible(Integer.parseInt(request.getParameter("idResponsible")));
+	     task.setId_project(Integer.parseInt(request.getParameter("id_project")));
+	     task.setStatus(request.getParameter("status"));
 	     task.setId_user(Integer.parseInt(request.getParameter("id_user")));
-	     task.setId_user(Integer.parseInt(request.getParameter("id_project")));
-	  
+
+  
 	     String q = "INSERT INTO task"
-					+ "(id, name, date_start, description, state, hours, id_user, id_project)"
-					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+					+ "(id, name, desc, notes, dateBegin, dateEnd, idResponsible, id_project, status, id_user)"
+					+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	     
 	     try {
 		
@@ -141,11 +144,14 @@ public class TaskServlet extends HttpServlet {
 			stmt = (PreparedStatement)conn.prepareStatement(q);				
 			stmt.setInt(1, task.getId());
 			stmt.setString(2, task.getName());
-			stmt.setString(3, task.getDate_start());
-			stmt.setString(4, task.getDescription());
-			stmt.setString(5, task.getState());
-			stmt.setInt(6, task.getHours());
-			stmt.setInt(7, task.getId_user());
+			stmt.setString(3, task.getDesc());
+			stmt.setString(4, task.getNotes());
+			stmt.setString(5, task.getDateBegin());
+			stmt.setString(6, task.getDateEnd());
+			stmt.setInt(7, task.getIdResponsible());
+			stmt.setInt(8, task.getId_project());
+			stmt.setString(9, task.getStatus());
+			stmt.setInt(10, task.getId_user());
 			stmt.executeUpdate();
 			stmt.close();
 			conn.close();
