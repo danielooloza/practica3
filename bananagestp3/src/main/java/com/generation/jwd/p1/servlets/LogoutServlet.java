@@ -27,7 +27,7 @@ public class LogoutServlet extends HttpServlet {
         
         session.invalidate();  
          
-        request.setAttribute("disconnect", "Has cerrado la sesion con exito");
+        request.setAttribute("disconnect", "Has cerrado la sesión con éxito");
         request.getRequestDispatcher("/login").include(request, response);  
 	}
 	

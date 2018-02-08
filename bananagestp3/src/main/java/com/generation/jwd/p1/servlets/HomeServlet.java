@@ -58,7 +58,7 @@ public class HomeServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			datasource = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			connection = (Connection) datasource.getConnection();
-			stmt = (PreparedStatement)connection.prepareStatement("SELECT * FROM task WHERE id_user = ?");
+			stmt = (PreparedStatement)connection.prepareStatement("SELECT * FROM tasks WHERE id_user = ?");
 			stmt.setInt(1,user_id );
 			rs = stmt.executeQuery();		
 			 			

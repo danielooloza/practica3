@@ -58,7 +58,7 @@ public class ProjectServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM user ORDER BY name ASC");	
+			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM users ORDER BY name ASC");	
 			rs = stmt.executeQuery();
 		
 			while(rs.next()) {

@@ -63,7 +63,7 @@ public class TaskServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM user order by id asc");	
+			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM users ORDER BY id ASC");	
 			rs = stmt.executeQuery();
 			
 			while(rs.next()) {
@@ -89,7 +89,7 @@ public class TaskServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM project ORDER id ASC");	
+			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM projects ORDER BY id ASC");	
 			rs = stmt.executeQuery();
 			
 			while(rs.next()) {
