@@ -4,25 +4,27 @@ public class Task  {
 
 	private int id;
 	private String name;
-	private String description;
-	private String date_start;
-	private String state;
-	private int hours;
-	private int id_user;
+	private String desc;
+	private String notes;
+	private String dateBegin;
+	private String dateEnd;
+	private String idResponsible;
+	private int status;
 	private int id_project;
 	
 	public Task() {};
 	
-	public Task(int id, String name, String description, String date_start,String state, int hours, 
-				 int id_user,int id_project) {
+	public Task(int id, String name, String desc, String notes, String dateBegin, String dateEnd,
+			String idResponsible, int status, int id_project) {
 		
 		this.id = id;
 		this.name = name;
-		this.description = description;
-		this.date_start = date_start;
-		this.state = state;
-		this.hours = hours;
-		this.id_user = id_user;
+		this.desc = desc;
+		this.notes = notes;
+		this.dateBegin = dateBegin;
+		this.dateEnd = dateEnd;
+		this.idResponsible = idResponsible;
+		this.status = status;
 		this.id_project = id_project;
 	}
 
@@ -42,45 +44,54 @@ public class Task  {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
-	public String getDate_start() {
-		return date_start;
+	public String getNotes() {
+		return notes;
 	}
 
-	public void setDate_start(String date_start) {
-		this.date_start = date_start;
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
-	public String getState() {
-		return state;
+	public String getDateBegin() {
+		return dateBegin;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setDateBegin(String dateBegin) {
+		this.dateBegin = dateBegin;
 	}
 
-	public int getHours() {
-		return hours;
+	public String getDateEnd() {
+		return dateEnd;
 	}
 
-	public void setHours(int hours) {
-		this.hours = hours;
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
 	}
 
-	public int getId_user() {
-		return id_user;
+	public String getIdResponsible() {
+		return idResponsible;
 	}
 
-	public void setId_user(int id_project) {
-		this.id_project = id_project;
+	public void setIdResponsible(String idResponsible) {
+		this.idResponsible = idResponsible;
 	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	public int getId_project() {
 		return id_project;
 	}
@@ -88,5 +99,7 @@ public class Task  {
 	public void setId_project(int id_project) {
 		this.id_project = id_project;
 	}
+
+	
 }
 
