@@ -99,7 +99,6 @@ public class Task  {
 	public void setId_project(int id_project) {
 		this.id_project = id_project;
 	}
-
 	
 }
 
