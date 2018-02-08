@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +20,6 @@ import javax.sql.DataSource;
 
 import com.generation.jwd.p1.beans.Task;
 import com.generation.jwd.p1.beans.User;
-
-
 
 
 @WebServlet("/homeuser")
@@ -69,11 +66,15 @@ public class HomeServlet extends HttpServlet {
 				myTask = new Task();
 				myTask.setId(rs.getInt(1));
 				myTask.setName(rs.getString(2));
-				myTask.setDate_start(rs.getString(3));
-				myTask.setDescription(rs.getString(4));
-				myTask.setState(rs.getString(5));				
-				myTask.setHours(rs.getInt(6));
-				myTask.setId_user(rs.getInt(7));
+				myTask.setDesc(rs.getString(3));
+				myTask.setNotes(rs.getString(4));
+				myTask.setDateBegin(rs.getString(5));
+				myTask.setDateEnd(rs.getString(6));
+				myTask.setIdResponsible(rs.getInt(7));
+				myTask.setId_project(rs.getInt(8));
+				myTask.setStatus(rs.getString(9));
+				myTask.setId_user(rs.getInt(10));
+
 				taskList.add(myTask);	
 			}			
 			
