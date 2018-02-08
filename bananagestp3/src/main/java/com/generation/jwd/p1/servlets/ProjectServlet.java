@@ -58,7 +58,7 @@ public class ProjectServlet extends HttpServlet {
 			envContext = (Context)initContext.lookup("java:/comp/env");
 			ds = (DataSource)envContext.lookup("jdbc/banana_gest_new");
 			conn = (Connection) ds.getConnection();
-			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM user order by name asc");	
+			stmt = (PreparedStatement)conn.prepareStatement("SELECT id, name FROM user ORDER BY name ASC");	
 			rs = stmt.executeQuery();
 		
 			while(rs.next()) {
@@ -84,15 +84,20 @@ public class ProjectServlet extends HttpServlet {
 
 		Project project = new Project();
 		
+		project.setId(Integer.parseInt(request.getParameter("id")));
 		project.setName(request.getParameter("name"));
-		project.setDescription(request.getParameter("description"));
-		project.setDate_start(request.getParameter("date_start"));
-		project.setDate_end(request.getParameter("date_end"));
-		project.setId_user(Integer.parseInt(request.getParameter("id_user")));
+		project.setDesc(request.getParameter("desc"));
+		project.setDateBegin(request.getParameter("dateBegin"));
+		project.setDateEnd(request.getParameter("dateEnd"));
+		project.setIdResponsible(Integer.parseInt(request.getParameter("idResponsible")));
+		project.setNotes(request.getParameter("notes"));
+		project.setStatus(request.getParameter("status"));
+		project.setId_task(Integer.parseInt(request.getParameter("id_task")));
+		
 				
 		String q = "INSERT INTO project"
-				+ "(id, name, date_start, date_end, description, id_user)"
-				+ "VALUES(?, ?, ?, ?, ?, ?)";
+				+ "(id, name, desc, dateBegin, dateEnd, idResponsible, notes, satus, id_task)"
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 				
@@ -104,10 +109,13 @@ public class ProjectServlet extends HttpServlet {
 			stmt = (PreparedStatement)conn.prepareStatement(q);				
 			stmt.setInt(1, project.getId());
 			stmt.setString(2, project.getName());
-			stmt.setString(3, project.getDate_start());
-			stmt.setString(4, project.getDate_end());
-			stmt.setString(5, project.getDescription());
-			stmt.setInt(6, project.getId_user());
+			stmt.setString(3, project.getDesc());
+			stmt.setString(4, project.getDateBegin());
+			stmt.setString(5, project.getDateEnd());
+			stmt.setInt(6, project.getIdResponsible());
+			stmt.setString(7, project.getNotes());
+			stmt.setString(8, project.getStatus());
+			stmt.setInt(9, project.getId_task());
 			stmt.executeUpdate();
 				
 			stmt.close();

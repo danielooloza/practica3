@@ -32,20 +32,20 @@
                         <tr>
                             <td class="namecontent">Descripción</td>
                             <td class="contenttable">
-                                <textarea id="description" name="description" required="true" rows="15" cols="60"
+                                <textarea id="description" name="desc" required="true" rows="15" cols="60"
                                  ></textarea>
                             </td>
                         </tr>
                          <tr>
                             <td class="namecontent">Fecha de inicio</td>
                             <td class="contenttable">
-                                <input id="date_start" type="date" name="date_start" required="true"/>               
+                                <input id="date_start" type="date" name="dateBegin" required="true"/>               
                             </td>
                         </tr>
                         <tr>
                             <td class="namecontent">Fecha de fin</td>
                             <td class="contenttable">
-                                <input id="date_end" type="date" name="date_end" required="true"/>               
+                                <input id="date_end" type="date" name="dateEnd" required="true"/>               
                             </td>
                         </tr>   
                         <tr>
