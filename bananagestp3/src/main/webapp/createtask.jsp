@@ -63,7 +63,7 @@
                                     </c:forEach>
                                 </select>
                             </td>
-                        </tr>
+                        </tr> 
                          <tr>
                             <td class="namecontent">Proyecto asignado</td>
                             <td class="contenttable">
