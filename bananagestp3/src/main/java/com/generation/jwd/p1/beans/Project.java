@@ -5,69 +5,90 @@ public class Project {
 	private int id;
 	private String name;
 	private String description;
-	private String date_start;
-	private String date_end;
-	private int id_user;
+	private String dateBegin;
+	private String dateEnd;
+	private int idResponsible;
+	private String notes;
+	private String status;
+	private int id_task;
 	
-	public Project() {};
 	
-	public Project(int id, String name, String description, String date_start,String date_end, int id_user) {
-		
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.date_start = date_start;
-		this.date_end = date_end;
-		this.id_user = id_user;
+	public Project() {
+		super();
 	}
-
+	
 	public int getId() {
 		return id;
 	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	public String getDescription() {
 		return description;
 	}
-
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public String getDate_start() {
-		return date_start;
+	
+	public String getDateBegin() {
+		return dateBegin;
 	}
-
-	public void setDate_start(String date_start) {
-		this.date_start = date_start;
+	
+	public void setDateBegin(String dateBegin) {
+		this.dateBegin = dateBegin;
 	}
-
-	public String getDate_end() {
-		return date_end;
+	
+	public String getDateEnd() {
+		return dateEnd;
 	}
-
-	public void setDate_end(String date_end) {
-		this.date_end = date_end;
+	
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
 	}
-
-	public int getId_user() {
-		return id_user;
+	
+	public int getIdResponsible() {
+		return idResponsible;
 	}
-
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	
+	public void setIdResponsible(int idResponsible) {
+		this.idResponsible = idResponsible;
 	}
+	
+	public String getNotes() {
+		return notes;
+	}
+	
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+	
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	public int getId_task() {
+		return id_task;
+	}
+	
+	public void setId_task(int id_task) {
+		this.id_task = id_task;
+	}
+	
 }
 
 		
