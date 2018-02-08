@@ -97,7 +97,7 @@ public class ProjectServlet extends HttpServlet {
 				
 		String q = "INSERT INTO project"
 				+ "(id, name, desc, dateBegin, dateEnd, idResponsible, notes, satus, id_task)"
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
 		
 		try {
 				

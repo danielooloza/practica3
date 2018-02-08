@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <div class="head"><img src="images/profile.png" widtd="55" height="55"><h3>Bienvenido/a ${id_user}</h3>
+            <div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${id_user}</h3>
             <a href="#">Editar perfil</a></div>
             <div class="head"><h1>Banana GEST</h1><a href="homeuser.jsp"><img src="images/bananas_medio.png"/></a></div>
             <div class="head"><h4><a href="LogoutServlet">Logout</a></h4></div>
@@ -59,7 +59,6 @@
                             </td>
                         </tr>                 
                     </table>
-                </p>
                 <div id="boton">
                     <button  style="widtd:200px; height:50px;">Crear proyecto</button>
                 </div>
@@ -68,15 +67,5 @@
         <footer>
             <span>Banana GEST - Todos los derechos reservados</span>
         </footer>
-        <script>
-           /*  function validar(){
-                var inpObj = document.getElementById("formtask");
-                if (inpObj.checkValidity() == false) {
-                    alert("Task has not created")
-                } else{ 
-                    alert("Task has been created")
-                }            
-            } */
-        </script>
     </body>
     </html>
